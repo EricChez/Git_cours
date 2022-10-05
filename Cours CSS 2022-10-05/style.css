@@ -1,0 +1,107 @@
+/* several ways of doing the margins */
+/* if we use one value, it applies to all four margins: 
+margin: 5px; */
+/* if we put just two values, it's vertical and horizontal margins
+margin: 10px 15px; */
+/* if we put three values, it's vertical left, horizontal, vertical right */
+/* if we put four values, it's top, right, bottom, left: 
+margin: 5px 10px 5px 10px */
+.space01 {
+    margin: 0px 10px;
+    color: red;
+}
+.space02 {
+    border: 2px solid #333;
+    padding: 3px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    background-color: aquamarine;
+    color: cornflowerblue;
+}
+p {
+    line-height: 30px;
+    margin-left: 50px;
+}
+/* to find back the original value of line-height, we write: 
+line-height: initial; */
+/* the value 'initial' works for all attributes (properties) */
+
+/* we normally use 'em' for margins and paddings */
+.space03 {
+    margin: 2em;
+    color: cornflowerblue;
+    font-weight: bold;
+}
+.space04 {
+    text-indent: 3em;
+}
+.color-red {
+    color: red;
+}
+.text-center {
+    text-align: center;
+}
+.square {
+    height: 50px;
+    width: 50px;
+    background-color: black;
+}
+.rectangle {
+    height: 50px;
+    width: 10%;
+    /* the 10% refers to the size of the container, which here is the body */
+    background-color: blue;
+}
+.div-mother-width {
+    width: 50%;
+    border: 1px solid black;
+}
+.margin-div {
+    margin-top: 10px;
+}
+.rectangle-viewport {
+    height: 50px;
+    background-color: orange;
+    width: 50vw;
+}
+.b-radius {
+    border-radius: 25%;
+}
+.b-circle {
+    border-radius: 50%;
+}
+.square-abs {
+    position: absolute;
+    top: 300px;
+    right: 50%;
+    background-color: blueviolet;
+}
+.mother-relative {
+    border: 2px solid black;
+}
+.circle-relative {
+    position: relative;
+    bottom: -13px;
+    right: -13px;
+}
+.circle-relative02 {
+    position: relative;
+    left: calc(50% - 25px);
+}
+nav {
+    background-color: yellow;
+    height: 75px;
+    position: sticky;
+    top: 0;
+}
+.depth {
+    z-index: -1;
+}
+.transform-square-translation {
+    transform: translate(10px);
+    background-color: forestgreen;
+}
+.transform-square-rotation {
+    transform: rotate(45deg);
+    background-color: fuchsia;
+}
