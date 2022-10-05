@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inputs</title>
+</head>
+<body>
+    <form action="" method="post">
+        <label for="textInput">Input text</label>
+        <br>    
+        <input type="text" name="textInput" id="textInput" placeholder="text goes here">
+        <br>
+        <label for="emailInput">Input email</label>
+        <br>    
+        <input type="email" name="emailInput" id="emailInput">
+        <br>
+        <label for="numInput">Input number</label>
+        <br>    
+        <input type="number" name="numInput" id="numInput" min="10" max="55" value="20">
+        <br>
+        <label for="colorInput">Input color</label>
+        <br>    
+        <input type="color" name="colorInput" id="colorInput" value="#FFFF00">
+        <br>
+        <label for="textInput">Input date</label>
+        <br>    
+        <input type="date" name="dateInput" id="dateInput" min="2022-10-03" value="2022-10-03">
+        <br>
+        <label for="localDateInput">Input date & time</label>
+        <br>    
+        <input type="datetime-local" name="localDateInput" id="localDateInput" value="2022-10-03T00:00">
+        <br>
+        <label for="fileInput">Upload file</label>
+        <br>    
+        <input type="file" name="fileInput" id="fileInput">
+        <br>
+        <label for="passwordInput">Input password</label>
+        <br>    
+        <input type="password" name="passwordInput" id="passwordInput">
+        <br>
+        <label for="textInput">Input time</label>
+        <br>    
+        <input type="time" name="timeInput" id="timeInput" value="00:00">
+        <br>
+        <label for="rangeInput">Select value</label>
+        <br>    
+        <input type="range" name="rangeInput" id="rangeInput">
+        <br>
+        <label for="checkInput">Check or uncheck box</label>
+        <br>    
+        <input type="checkbox" name="checkInput" id="checkInput" checked>
+        <!-- by default, value="false" to have the box unchecked and
+        value="true" to have to box checked -->
+        <br>
+        <input type="submit" value="Validate" accesskey="enter">
+        <!-- the accesskey attribute does not function in all browsers -->
+    </form>
+
+</body>
+</html>

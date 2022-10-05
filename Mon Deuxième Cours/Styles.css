@@ -1,0 +1,10 @@
+table, td {
+    border: solid 1px #333;
+}
+tr {
+    text-align: center;
+}
+thead, tfoot {
+    background-color: #333;
+    color: whitesmoke;
+}

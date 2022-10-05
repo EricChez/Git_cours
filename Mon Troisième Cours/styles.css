@@ -1,0 +1,54 @@
+/* we select everything with '*' */
+/* more often we select body instead of '*' */
+* {
+    font-weight: bold;
+}
+/* select all the <li> tags children of <ul> */
+ul > li {
+    color: lime;
+    background-color: yellow;
+}
+/* select the first p element after the div element (the first brother in fact */
+div + p {
+    color: red;
+}
+/* select all h1, h2 and h3 */
+h1, h2, h3 {
+    font-weight: normal;
+}
+/* select all the p elements in the div element */
+div p {
+    color: #f79862;
+}
+.link {
+    text-decoration: none;
+    color: red;
+}
+/* when the mouse hovers over any link, the link will change color */
+a:hover {
+    color: yellow;
+}
+h1::first-letter, h2::first-letter, h3::first-letter {
+    color: #c39797;
+    font-weight: bolder;
+}
+/* insert an element before the selected element */
+#super-title::before {
+    content: "@ ";
+    color: #e41919 !important;
+    /* !important is an absolute priority */
+}
+#super-title::after {
+    content: " @";
+    color: #e41919 !important;
+}
+input:checked + label {
+    background-color: #f79862;
+    color:aquamarine;
+}
+#papa p:last-child {
+    color: #e41919;
+}
+#maman p:nth-child(2) {
+    color: greenyellow;
+}
