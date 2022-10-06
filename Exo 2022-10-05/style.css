@@ -73,6 +73,8 @@ input[type="submit"] {
 
 }
 .black-square {
+    display: inline-block;
+    /* added the above line after correction */
     height: 30px;
     width: 30px;
     background-color: black;
@@ -81,24 +83,35 @@ input[type="submit"] {
     margin-right: 10px;
 }
 .inline {
-    display:flex;
-    justify-content: center;
+    text-align: center;
+    /* added the above line and suppressed the lines below
+    after correction */
+    /* display:flex;
+    justify-content: center; */
 }
-.right {
+.right-div {
+    text-align: right;
+}
+/* below what I had done orginally, which works,
+but the CSS above is that of Vivien */
+/* .right {
     position: absolute;
     right: 0%;
     margin-bottom: 100px;
-}
+}*/
 .center {
     position: relative;
     left: calc(50% - 75px);
-    margin-top: 200px;
+    /* suppressed the line below after correction */
+    /* margin-top: 200px; */
     
 }
-.image-block {
+/* suppressed the CSS below after correction which was no longer
+of any use */
+/* .image-block {
     position: static;
     display: block;
-}
+} */
 .arrow {
     transform: rotate(45deg);
     font-size: 1.5em;
