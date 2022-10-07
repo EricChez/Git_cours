@@ -252,3 +252,111 @@ console.log(mySecondArray);
 let banana = "one banana";
 console.log(banana[5]);// gives the 6th letter of the string
 // in fact a string is an array
+// arrays are objects
+// a function in an object is called a method
+// in all languages, a method is a function in an object
+
+// Object creation
+var voiture = {
+    marque: "Renault", // this is an attribute
+    annee: "2005", // we'll see later that dates are in fact objects
+    puissance: 125,
+
+    afficher: function() {
+        console.log("Cette voiture est une " + this.marque + " de l'année " + this.annee + ", elle a " + this.puissance + " chevaux.")
+    },
+}
+// when creating an object, we always put the variables at the top,
+// and the methods after
+
+voiture.afficher();
+// an object is a collection of parameters and functions
+console.log(voiture.marque);
+
+// LOOPS
+
+// 'While' Loop
+var iteration = 0;
+while (iteration < 7) {
+    console.log(iteration);
+    iteration++;    // or iteration += 1
+                    // or iteration = iteration + 1
+}
+
+// 'For' Loop
+for (let i = 0; i < 12; i++) { // for (i = 0; i <12; i++) works just as well but does not seem to be the correct syntax
+    console.log(i);
+}
+for (let j = 0; j < mySecondArray.length; j++) {
+    console.log(mySecondArray[j]);
+}
+
+// 'Do ... while' Loop
+let doLoop = 0;
+do {
+    console.log(doLoop);
+} while (iteration < 0) {
+    console.log(doLoop);
+    doLoop++;
+}
+
+iterationBreak = 0;
+while (iterationBreak < 80) {
+    console.log(iterationBreak);
+    iterationBreak++;
+    if (iterationBreak > 47) {
+        break;
+    }
+}
+// function to calculate factorial
+function factorial(num) {
+    var f = 1;
+    for (let k = 1; k<= num; k++) {
+        f *= k;
+    }
+    console.log(f);
+}
+factorial(1);
+
+// recursive function to calculate factorial
+function factor(num) {
+    if (num === 0) {
+        return 1;
+    } else {
+        return num * factor(num - 1); // this is the bit that will stop the function
+        // at some point when we get to factor(0)
+    }
+}// an executed return stops a function
+console.log(factor(4));
+console.log(factor(1));
+console.log(factor(5));
+
+// Exo: concatenation of two arrays of same length, one element by one element
+var arrA = ['Jeanette', 'Alphonse', 'George', 'Ludwig'];
+var arrB = ['Paul', 'Frédéric', 'Jacques', 'Roger'];
+function arrMerge(arrA, arrB) {
+    let lengthA = arrA.length;
+    let lengthB = arrB.length;
+    let arrC = [];
+    if (lengthA !== lengthB) {
+        console.log("Vos tableaux doivent avoir la même taille !");
+    } else {
+        for (let i = 0; i < arrA.length; i++) {           
+            arrC.push(arrA[i], arrB[i]);
+        }
+    }
+    console.log(arrC);
+}
+arrMerge(arrA, arrB);
+
+// Correction
+function concatArray(arrA, arrB) {
+    if (arrA.length === arrB.length) {
+        for (let index = 0; index < arrB.length; index++){
+            console.log(arrA[index] + ' ' + arrB[index]);
+        }
+    } else {
+            console.log("Les tableaux n'ont pas la même taille.")
+        }
+    }
+concatArray(arrA, arrB);
