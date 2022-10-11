@@ -1,0 +1,35 @@
+body {
+    text-align: center;
+}
+input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3em;;
+}
+.label {
+    display: block;
+    padding: 10px;
+}
+/*table {
+    display: inline-block;
+} */
+/* Vivien ne voulait pas voir de display dans le code CSs */
+#table {
+    margin-left: auto;
+    margin-right: auto;
+}
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+th, td {
+    width: 30%;
+    height: 20px;
+    padding: 10px;
+}
+
+h2 {
+    color: red;
+}

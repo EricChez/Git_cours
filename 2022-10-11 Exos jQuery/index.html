@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Moyenne des élèves</h1>
+    <script src="jquery-3.6.1.js"></script>
+    <script src="main.js"></script>
+
+    <h2 id="error">Les noms ne doivent pas être vides et la note doit être comprise entre 0 et 20 !</h2>
+
+    <label class="label" for="forename">Pr&eacute;nom</label>
+    <input id="forename" type="text" placeholder="Prénom"></input>
+    <label class="label" for="surname">Nom</label>
+    <input id="surname" type="text" placeholder="Nom"></input>
+    <label class="label" for="mark">Moyenne individuelle</label>
+    <input id ="mark" type ="number" placeholder="Note"></input>
+    <input id="calc" type="button" value="Valider"></input>
+    <!-- should display the average of all students in a table
+    then class average, then all numbers btwn 0 and 20 -->
+
+    <table id="table">
+        <thead>
+        <tr>
+            <th>Pr&eacute;nom</th>
+            <th>Nom</th>
+            <th>Moyenne</th>
+        </tr>
+        </thead>
+        
+    </table>
+
+    <h3>Moyenne de la classe</h3>
+    <p id="meanClass"></p>
+
+</body>
+</html>
