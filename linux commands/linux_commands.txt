@@ -1,0 +1,35 @@
+stagiaire15@stagiaire15-HP-ProBook-650-G4:~$ cd Bureau
+stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau$ cd Main
+stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau/Main$ mkdir 'linux commands'
+stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau/Main$ cd 'linux commands'
+stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau/Main/linux commands$ touch linux_commands.txt
+stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau/Main/linux commands$ ls -la
+total 8
+drwxrwxr-x  2 stagiaire15 stagiaire15 4096 oct.  12 15:39 .
+drwxrwxr-x 20 stagiaire15 stagiaire15 4096 oct.  12 15:38 ..
+-rw-rw-r--  1 stagiaire15 stagiaire15    0 oct.  12 15:39 linux_commands.txt
+/* le groupe des trois premières lettres après le 'd' indiquent les droits de l'utilisateur loggé
+/* le groupe des trois autres lettres, c'est le groupe d'utilisateurs autorisés
+/* i.e. le groupe auquel nous appartenons
+/* le dernier groupe indique tous les usagers sauf nous et notre groupe
+/* le . à la fin de la première ligne indique les droits du dossier parent du fichier dans lequel on est
+/* les .. à la fin de la deuxième ligne indiquent les droits du dossier parent du dossier parent du fichier dans lequel on est
+/* les trois lettres indiquent le type de droit que nous avons :
+/* r = read	= 4 
+/* w = write	= 2
+/* x = execute	= 1
+/* 0 = aucun droit
+/* eg: 742 indique que le premier groupe a r, w and x, le deuxième groupe a r, le troisième groupe a w
+stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau/Main/linux commands$ 
+
+stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau/Main/linux commands$ chmod 777 linux_commands.txt
+/* pour donner tous les droits au fichier pour tous les groupes
+stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau/Main/linux commands$ ls -la
+total 12
+drwxrwxr-x  2 stagiaire15 stagiaire15 4096 oct.  12 15:48 .
+drwxrwxr-x 20 stagiaire15 stagiaire15 4096 oct.  12 15:38 ..
+-rwxrwxrwx  1 stagiaire15 stagiaire15  727 oct.  12 15:48 linux_commands.txt
+/* on a bien donné tous les droits au fichier pour tous les groupes (troisième lighe juste au dessus)
+/* en fait, on n'avait que rw au départ
+stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau/Main/linux commands$ 
+
