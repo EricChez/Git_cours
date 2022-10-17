@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Display Flex</title>
+</head>
+<body>
+    <h1>Flex box</h1>
+    <div class="container-flex-row">
+        <div class="div-one"></div>
+        <div class="div-two"></div>
+        <div class="div-three"></div>
+    </div>
+    <div>
+        <p> flex-direction: row; ---> will align the divs in a row</p>
+    </div>        
+         
+    <div class="container-flex-row-reverse">
+        <div class="div-one"></div>
+        <div class="div-two"></div>
+        <div class="div-three"></div>
+    </div>
+    <div>
+        <p> flex-direction: row-reverse; ---> will align the divs in reverse order</p>
+    </div>
+
+    <div class="container-flex-column">
+        <div class="div-one"></div>
+        <div class="div-two"></div>
+        <div class="div-three"></div>
+    </div>
+    <div>
+        <p> flex-direction: column; ---> will align the divs in columns</p>
+    </div>
+
+    <div class="container-flex-column-reverse">
+        <div class="div-one"></div>
+        <div class="div-two"></div>
+        <div class="div-three"></div>
+    </div>
+    <div>
+        <p> flex-direction: column-reverse; ---> will align the divs in reverse order</p>
+    </div>
+
+    <div class="container-flex-row">
+        <div class="div-one"></div>
+        <div class="div-two"></div>
+        <div class="div-three"></div>
+        <div class="div-one"></div>
+        <div class="div-two"></div>
+        <div class="div-three"></div>
+    </div>
+    <div>
+        <p> flex-direction: row; ---> will align the divs in a row and will
+            adjust the width automatically
+        </p>
+    </div>
+    
+    <div class="container-flex-row-wrap">
+        <div class="div-one"></div>
+        <div class="div-two"></div>
+        <div class="div-three"></div>
+        <div class="div-three"></div>
+        <div class="div-one"></div>
+        <div class="div-two"></div>        
+    </div>
+    <div>
+        <p> flex-direction: row;<br>
+            flex-wrap: wrap; ---> will return to a new line when the aligned divs exceed the container's width
+        </p>
+    </div> 
+
+    <div class="container-flex-size">
+        <div class="div-flex-size-one"></div>
+        <div class="div-flex-size-two"></div>
+        <div class="div-flex-size-three"></div>
+    </div>
+    <div>
+        <p> flex: 1;
+            flex: 2;
+            flex: 5; ---> will give a width to the div relative to that given to the other divs
+        </p>
+    </div>
+    <div class="container-flex-center">
+        <div class="div-one"></div>
+        <div class="div-two"></div>
+        <div class="div-three"></div>
+    </div>
+    <div>
+        <p> justify-content: center; ---> will center the divs (in a row here)<br>
+            justify-content acts on the main axis, hence we need to be mindful
+            of the direction adopted
+        </p>
+    </div>
+    <div class="container-flex-space-evenly">
+        <div class="div-one"></div>
+        <div class="div-two"></div>
+        <div class="div-three"></div>
+    </div>
+    <div>
+        <p> justify-content: space-evenly; ---> will center the divs and space them evenly (in a row here)
+        </p>
+    </div>
+    <div class="container-flex-space-around">
+        <div class="div-one"></div>
+        <div class="div-two"></div>
+        <div class="div-three"></div>
+    </div>
+    <div>
+        <p> justify-content: space-around; ---> will center the divs with space around one another (in a row here)
+        </p>
+    </div>
+    <div class="container-flex-space-between">
+        <div class="div-one"></div>
+        <div class="div-two"></div>
+        <div class="div-three"></div>
+    </div>
+    <div>
+        <p> justify-content: space-between; ---> will center the divs with space between them (in a row here)
+        </p>
+    </div>
+    <div class="container-flex-align-items-vert">
+        <div class="div-one"></div>
+        <div class="div-two"></div>
+        <div class="div-three"></div>
+    </div>
+    <div>
+        <p> flex-direction: row;<br>
+            align-items: center; ---> align-items will align the div along the secondary axis (here, vertical center)
+        </p>
+    </div>
+    <div class="container-flex-align-items-hor">
+        <div class="div-one"></div>
+        <div class="div-two"></div>
+        <div class="div-three"></div>
+    </div>
+    <div>
+        <p> flex direction: column;<br>
+            align-items: center; ---> align-items will align the div along the secondary axis (here, horizontal center)
+        </p>
+    </div>
+    <hr>
+    <h1>Exo</h1>
+    <div class="container-exo-one">
+        <div class="exo-one-one"></div>
+        <div class="exo-one-two"></div>
+        <div class="exo-one-three"></div>
+        <div class="exo-one-four"></div>
+        <div class="exo-one-two"></div>
+        <div class="exo-one-three"></div>
+        <div class="exo-one-four"></div>
+        <div class="exo-one-one"></div>
+    </div>
+
+</body>
+</html>

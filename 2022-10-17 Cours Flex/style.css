@@ -1,0 +1,139 @@
+h1 {
+    text-align: center;
+}
+hr {
+    margin-bottom: 20px;
+}
+.div-one {
+    width: 30%;
+    height: 50px;
+    background-color: aquamarine
+}
+.div-two {
+    width: 30%;
+    height: 50px;
+    background-color: cadetblue;
+}
+.div-three {
+    width: 30%;
+    height: 50px;
+    background-color: teal;
+}
+/*
+On va transformer ces divs en boîtes qui correspondent à
+row =  les axes horizontaux
+column = les axes verticaux
+on les met dans un autre container, ici 'container-flex',
+
+*/
+.container-flex-row {
+    display: flex;
+    flex-direction: row; /* will align the divs in a row*/
+
+}
+.container-flex-row-reverse {
+    display: flex;
+    flex-direction: row-reverse; /* will align the divs in reverse order */
+    
+}
+.container-flex-column {
+    display: flex;
+    flex-direction: column; /* will align the divs in columns */
+    
+}
+.container-flex-column-reverse {
+    display: flex;
+    flex-direction: column-reverse; /* will align the divs in reverse order */    
+}
+.container-flex-row-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap
+}
+.div-flex-size-one {
+    height: 50px;
+    background-color: aquamarine
+}
+.div-flex-size-two {
+    height: 50px;
+    background-color: cadetblue;
+}
+.div-flex-size-three {
+    height: 50px;
+    background-color: teal;
+}
+.container-flex-size {
+    display: flex;
+    flex-direction: row;
+}
+.div-flex-size-one {
+    flex: 1;
+}
+.div-flex-size-two {
+    flex: 2;
+}
+.div-flex-size-three {
+    flex: 5;
+}
+.container-flex-center {
+    display: flex;
+    justify-content: center;
+}
+.container-flex-space-evenly {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.container-flex-space-around {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.container-flex-space-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.container-flex-align-items-vert {
+    border: 2px solid red;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.container-flex-align-items-hor {
+    border: 2px solid red;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.exo-one-one {
+    width: 25%;
+    height: 150px;
+    background-color: aquamarine
+}
+.exo-one-two {
+    width: 25%;
+    height: 150px;
+    background-color: cadetblue;
+}
+.exo-one-three {
+    width: 25%;
+    height: 150px;
+    background-color: teal;
+}
+.exo-one-four {
+    width: 25%;
+    height: 150px;
+    background-color: rgb(4, 60, 60);
+}
+.container-exo-one {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

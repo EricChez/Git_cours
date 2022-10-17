@@ -1,1 +1,6 @@
+GitHub Token (password)
 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
+
+GitLab Token (password)
+glpat-h6s6Y8qBPw3EPx5CQvxi
+
