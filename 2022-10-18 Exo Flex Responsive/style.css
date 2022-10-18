@@ -1,0 +1,85 @@
+@font-face {
+    font-family: "Dancing";
+    src: url("fonts/DancingScript-Regular.ttf")
+}
+
+    
+.wrapper {
+    width: 800px;
+    border: 1px solid black;
+    padding-right: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.img-one {
+    text-align: center;
+}
+.banner-one {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: rgb(154, 233, 205);
+    height: 50px;
+    margin-bottom: 30px;
+}
+.banner-one p {
+    text-align: center;
+    display:inline;
+    color: darkgreen;
+    font-style: italic;
+    font-family: "Dancing", 'Arial Narrow', Arial, sans-serif;
+    font-size: 2em;
+    background-color: rgb(154, 233, 205);
+    margin-top: 0.2em;
+    margin-bottom: o;
+}
+.article {
+    border: 1px dashed black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 200px;
+}
+h3 {
+    text-align: center;
+}
+.img-two {
+    margin: 0;
+    background-color: darkolivegreen;
+}
+.olivegreen {
+    background-color: darkolivegreen;
+    margin-top: 0;
+    margin: 0;
+}
+.img-two p {
+    color: white;
+    padding-bottom: 10px;
+    display: block;
+}
+p.hidden {
+    display: none;
+}
+@media screen and (min-width: 800px) {
+    .wrapper {
+      width: 90%;
+    }
+    .flex-wrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: wrap;
+    }
+    .col {
+        display:flex;
+        flex-direction: column-reverse;
+        justify-content: space-between ;
+    }
+    .article {
+        margin-right: 50px;
+    }
+    .img-two {
+        margin-left: 50px;
+    }
+    p.hidden {
+        display: initial;
+    }
+}

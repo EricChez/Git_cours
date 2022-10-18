@@ -1,0 +1,101 @@
+.main {
+    /*text-align: center;*/
+}
+h1 {
+    text-align: center;
+}
+.sq-yellowgreen {
+    width: 50px;
+    height: 50px;
+    background-color: #9acd32;
+    border-radius:0 50% 50% 0;
+}
+.sq-yellowgreen:hover {
+    border-radius: 0 25px 25px 0;
+    width: 300px;
+    transition-duration: 5000ms;
+}
+.sq-cornflowerblue {
+    width: 150px;
+    height: 50px;
+    background-color: cornflowerblue;
+    transition: background-color 5s, width 10s, height 10s;
+    /* si on la met là et pas en dessous, le background de la
+    div met 5s à apparaître quand on charge la page */
+    
+}
+.sq-cornflowerblue:hover {
+    background-color: crimson;
+    /*transition-duration: 800ms;*/
+    /*transition: background-color 5s, width 10s, height 10s;*/
+    width: 300px;
+    height: 100px;
+}
+.delay {
+    height: 100px;
+    width: 100px;
+    background-color: fuchsia;
+    border-radius: 50%;
+}
+.delay:hover {
+    transition-delay: 1s;
+    background-color: blueviolet;
+    transition-duration: 2000ms;
+    height: 200px;
+    width: 200px;
+}
+.round-move {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: orangered;
+    transition-property: width;
+    transition-timing-function: cubic-bezier(0,.99,1,-0.04);
+    transition-duration: 4s;
+}
+.round-move:hover {
+    width: 800px
+}
+.exo-one {
+    height: 100px;
+    width: 100px;
+    background-color: #9acd32;
+    /*transition: background-color 5s, border-radius 5s, margin-left 10s;*/
+}
+.exo-one:hover {
+    background-color: coral;
+    border-radius: 50%;
+    margin-left: 50%;
+    transition: background-color 5s, border-radius 5s 4s, margin-left 10s ease-in-out;
+
+}
+P.notes {
+    font-style: italic;
+}
+span.indent {
+    padding-left: 3em;
+}
+.tumble.wrapper {
+    height: 500px;
+    width: 100%;
+    border: 1px solid rgb(68, 38, 2);
+}
+.tumble {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    border-radius: 10px;
+    transition: all 5s;
+}
+.tumble:hover {
+   
+    background-color: darkcyan;
+    transform: rotate(720deg);
+    margin-left: 50%;
+    margin-top: 25%;
+    
+    /*margin-left: 500px;
+    margin-top: 200px;
+    transform: rotate(360deg);
+    transition-duration: 5000ms;*/
+}

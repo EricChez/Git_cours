@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CSS Flex Transitions</title>
+</head>
+<body>
+    <div class="main">
+    <h1>CSS Flex Transitions</h1>
+    
+    <div class="sq-yellowgreen"></div>
+    <p></p>
+    <div class="sq-cornflowerblue"></div>
+    <p>Nous pouvons mettre plusieurs propriétés à une transition.</p>
+    </div>
+    <div class="delay"></div>
+    <p> Avec l'option delay, nous pouvons retarder la transition.<br>
+        On peut aussi créer une classe delay qui pourra s'appliquer
+        à plusieurs éléments.</p>
+    <div class="round-move"></div>
+    <p>
+        Il existe des sites internet pour générer et personnaliser ses 
+        propres courbes de Béziers, comme par exemple :<br>
+        <a href="https://cubic-bezier.com/">https://cubic-bezier.com/</a>
+    </p>
+    <div class="exo-one"></div>
+    <p class="notes">
+        .longhand {<br>
+            <span class="indent">transition-property: transform;</span><br>
+            <span class="indent">transition-duration: 300ms;</span><br>
+            <span class="indent">transition-timing-function: ease-in-out;</span><br>
+            <span class="indent">transition-delay: 0s;</span><br>
+          }<br><br>
+          
+          .shorthand {<br>
+            <span class="indent">transition: transform 300ms ease-in-out 0s;</span><br>
+          }
+    </p>
+    <div class="tumble-wrapper">
+    <div class="tumble"></div>
+    </div>
+</body>
+</html>

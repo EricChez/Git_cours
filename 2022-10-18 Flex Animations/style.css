@@ -1,0 +1,60 @@
+h1 {
+    text-align: center;
+}
+
+.animation-one {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: animation-one;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+@keyframes animation-one {
+    from {background-color: red;}
+    33% {background-color: yellow;}
+    66% {background-color: rgb(30, 200, 144);}    
+}
+.animation-move-infinite {
+    width: 100px;
+    height: 100px;
+    background-color: cadetblue;
+    animation-name: move-one;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+.animation-move-alternate {
+    width: 100px;
+    height: 100px;
+    background-color: cadetblue;
+    animation-name: move-one;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes move-one {
+    from {margin-left: -5%;}
+    to {margin-left: 100%; background-color: yellow;}
+}
+.wrapper-one {
+    justify-content: center;
+    width: 50%;
+    height: 500px;
+    border: 1px solid red;
+    margin-left: 25%;
+}
+.move-sq {
+    width: 50px;
+    height: 50px;
+    background-color: chartreuse;
+    animation-name: move-sq-one;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes move-sq-one {
+    from {margin-left: 0; margin-top: 0;}
+    25% {margin-left: 95%; margin-top: 0;}
+    50% {margin-left: 95%; margin-top: 450px;}
+    75% {margin-left: 0%; margin-top: 450px;}
+    100% {margin-left: 0%; margin-top: 0;}
+}
