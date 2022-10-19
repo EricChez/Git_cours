@@ -1,0 +1,36 @@
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.flex-one {
+    height: 300px;
+    border: 1px solid cadetblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.sq-one {
+    height: 50px;
+    width: 50px;
+    background-color: orangered;
+}
+.sq-two {
+    height: 50px;
+    width: 50px;
+    background-color: chartreuse;
+}
+.sq-three {
+    height: 50px;
+    width: 50px;
+    background-color: cornflowerblue;
+}
+.order-one {
+    order: 1;
+}
+.order-two {
+    order: 2;
+}
+.order-three {
+    order: 3;
+}

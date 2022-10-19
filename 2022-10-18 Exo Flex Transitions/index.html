@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+    <!--
+        The defer attribute is a boolean attribute. If the defer attribute is set, 
+        it specifies that the script is downloaded in parallel to parsing the page, 
+        and executed after the page has finished parsing. Note: The defer attribute 
+        is only for external scripts (should only be used if the src attribute is present).
+    -->
+    <!--
+        We can otherwise place the script at the bottom of the body, just before
+        the </body> closing tag.
+    -->
     <title>CSS Flex Transitions</title>
 </head>
 <body>
@@ -27,7 +38,7 @@
         <a href="https://cubic-bezier.com/">https://cubic-bezier.com/</a>
     </p>
     <div class="exo-one"></div>
-    <p class="notes">
+    <p class="notes"><code>
         .longhand {<br>
             <span class="indent">transition-property: transform;</span><br>
             <span class="indent">transition-duration: 300ms;</span><br>
@@ -37,10 +48,30 @@
           
           .shorthand {<br>
             <span class="indent">transition: transform 300ms ease-in-out 0s;</span><br>
-          }
+          }</code>
     </p>
     <div class="tumble-wrapper">
     <div class="tumble"></div>
     </div>
+    <hr>
+    <hr>
+    <h1>Transitions en JS</h1>
+    <div class="square">
+        <div class="square-one"></div>
+    </div>
+    <div class="button">
+        <button id="btn-one">Click me</button>
+    </div>
+
+    <div>
+        <div class="moving-square">
+    </div>
+   <!--
+    deux boutons, un pour activer la classe, l'autre pour l'enlever
+   --> 
+   <div class="button">
+    <button id="activate">Activate</button>
+    <button id="remove">Remove</button>
+   </div>
 </body>
 </html>
