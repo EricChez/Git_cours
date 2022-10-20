@@ -1,4 +1,6 @@
-
+body {
+    padding-left: 50px;
+}
 h1 {
     text-align: center;
 }
@@ -135,4 +137,9 @@ span.indent {
 .forward-trans { /* Vivien l'a fait avec une margin-left */
     transform: translate(500px);
     /* margin-left: 50%; */
+}
+
+/* Le cours du 20/10/2022 commence ici */
+.red {
+    color: red;
 }

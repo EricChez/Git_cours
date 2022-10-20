@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "digital";
+    src: url("orlojEa9eW.otf");
+    }
+.digital {
+    font-family: "digital", Arial, sans-serif;
+    }
+    .ce
+h1 {
+    text-align: center;
+}
+#sq-timer {
+    background-color: cadetblue;
+    height: 100px;
+    width: 100px;
+    margin-left: 20%;
+}
+
+.circ-timer {
+    border-radius: 50%;
+    transition-duration: 3s;
+}
+h3 {
+    text-align: center;
+    color: teal;
+}
+#timer {
+    text-align: center;
+    color: darkred;
+    font-size: 1.5em;
+    font-family: "digital";
+}

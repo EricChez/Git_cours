@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>Timer</title>
+</head>
+<body>
+    <h1>Timer</h1>
+    <!-- afer a certain duration, a message will be written in the paragraph -->
+    <p id="message-timer-one"></p>
+    <br>
+    <p>Exercice: une petite transition qui commence au bout de 5s, sans utiliser un délai, uniquement avec du js.</p>
+    <div id="sq-timer"></div>
+    <p id="para-timer"></p>
+    <button id="stop">Click to stop the transition</button>
+    <br><br>
+
+    <!-- creating a timer -->
+    <h3>Timer</h3>
+    <div id="timer" class="digital">00:00</div>
+
+    <p style="font-size:2em;color:cadetblue;"><em>Personal notes</em></p>
+    <p><code>
+        The setInterval() method calls a function at specified intervals (in milliseconds).<br>
+        The setInterval() method continues calling the function until clearInterval() is called, 
+        or the window is closed.<br>
+        1 second = 1000 milliseconds.
+    </code></p>
+    <p style="color:cadetblue; font-style:italic;">The code below displays the minutes & seconds of the current time</h5>
+    <p><code>
+        var handler = function() {<br>
+        var date = new Date();<br>
+        var sec = date.getSeconds();<br>
+        var min = date.getMinutes();<br>
+        document.getElementById("timer").textContent = (min &lt; 10 ? "0" + min : min) + ":" + (sec &lt; 10 ? "0" + sec : sec);
+        };<br>
+        setInterval(handler, 1000);<br>
+        handler();<br>
+    </code></p>
+</body>
+</html>

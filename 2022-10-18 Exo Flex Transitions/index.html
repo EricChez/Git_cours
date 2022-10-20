@@ -38,6 +38,7 @@
         <a href="https://cubic-bezier.com/">https://cubic-bezier.com/</a>
     </p>
     <div class="exo-one"></div>
+    <h3>Personal notes</h3>
     <p class="notes"><code>
         .longhand {<br>
             <span class="indent">transition-property: transform;</span><br>
@@ -55,7 +56,9 @@
     </div>
     <hr>
     <hr>
-    <h1>Transitions en JS</h1>
+
+    <!-- Le cours du 19/10/2022 commence ici -->
+    <h1>Transitions en JS - 19/10/2022</h1>
     <div class="square">
         <div class="square-one"></div>
     </div>
@@ -73,5 +76,45 @@
     <button id="activate">Activate</button>
     <button id="remove">Remove</button>
    </div>
+   <hr>
+   <hr>
+
+   <!-- Le cours du 20/10/2022 commence ici -->
+   <h1 id="Click">Transitions en JS : onclick event - 20/10/2022</h1>
+   <!-- pour activer des animations, il vaut mieux utiliser des évènements -->
+   <p id="doubleClickMsg"></p>
+   <button id="doubleClick">Cliquez deux fois SVP</button>
+   <br><br>
+
+   <label for="inputFocus">Focus: the HTMLElement.focus() method is used to set focus on a specified element</label>
+   <br><br>
+   <input type="text" id="inputFocus" name="inputFocus"/>
+   <!-- actually, we simply added a placer  holder to the text input -->
+   <br><br>
+
+   <p id="inputMsg"></p>
+   <br>
+
+   <span>CheckBox</span>
+   <input type="checkbox" id="input-checkbox"/>
+   <br><br>
+   <p style="color:darkcyan; font-style: italic;">Check the link below to see the different
+    possible events in HTML</p>
+    <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">HTML Events</a>
+
+    <p style="color:cadetblue;"><em>Personal notes</em></p>
+    <p style="color:cadetblue;"><em>How to use the focus method: here clicking the button will set the focus on the text field</em></p>
+    <p><code><strong>HTML</strong></code></p>
+    <p><code>
+        &lt;input id="myTextField" value="Text field." /&gt<br>
+        &ltbutton id="focusButton"&gtClick to set focus on the text field&lt/button&gt
+    </code></p>
+    <p><code><strong>JavaScript</strong></code></p>
+    <p><code>
+    document.getElementById("focusButton").addEventListener("click", () => {<br>
+        document.getElementById("myTextField").focus();
+      });
+   </code></p>
+
 </body>
 </html>
