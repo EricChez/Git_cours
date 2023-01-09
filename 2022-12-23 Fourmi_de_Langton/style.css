@@ -1,0 +1,26 @@
+canvas{
+    border: black 1px solid;
+}
+
+h1{
+    text-align: center;
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button-flex-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin-left: 10px;
+}
+
+
+#stop, #reset, #randomize, label, input[type='range']{
+    margin-top: 10px;
+}

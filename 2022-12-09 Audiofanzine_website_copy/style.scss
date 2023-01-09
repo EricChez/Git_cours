@@ -1,0 +1,172 @@
+$navBackground:#0F314C;
+$topNav: #0F314C;
+$bottomNav: #223140;
+$mainWrapperTop: #020301;
+$mainWrapperBottom: #213140;
+@mixin border {
+    color: $topNav
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+.header {
+    background-color: $navBackground;
+    padding: 0;
+}
+input[type=search] {
+    text-align: left;
+    background-image: url("/image/searchIcon.png");
+    width: 100%;
+    height: 3em;
+    color: grey;
+}
+.topNav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#topNavLeft {
+    width: 25%;
+    @include border;
+}
+#topNavMiddle {
+    width: 35%;
+    @include border;
+}
+#topNavRight {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    @include border;
+}
+#topNavRight div {
+    padding-right: 2em;
+    color: #a4b7cc;
+    &:hover {
+        color: white;
+    }
+}
+.bottomNav {
+    display: flex;
+    justify-content: flex-start;
+    color: white;
+    background-color: $bottomNav;
+    padding: 0;
+}
+#bottomNavTag-1 {
+    padding-left: 1.6em !important;
+}
+.bottomNav div {
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    &:hover {
+        background-color: white;
+        color: rgb(39, 38, 38);
+    }
+}
+.bottomNav a {
+    text-decoration: none;
+    color: white;
+    &:hover {
+        background-color: white;
+        color: rgb(39, 38, 38);
+    }
+}
+#logoTV {
+    background-color: white;
+    color: $bottomNav;
+    border-radius: 0.2em;
+    &:hover {
+        background-color: $bottomNav;
+        color: white;
+    }
+}
+#redDot {
+    background-color: red;
+    border-radius: 50%;
+    width: 2px;
+    height: 2px;
+}
+.mainWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: linear-gradient(to bottom, $mainWrapperTop 0%, $mainWrapperBottom 50%);
+    padding-left: 4em;
+    padding-right: 2em;
+    padding-top: 2em;
+}
+.content {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.addBanner {
+    width: 10%;
+    border: 2px solid red;
+}
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid red;
+}
+.leftContainer {
+    width: 60%;
+    border-right: 1px solid rgb(80, 77, 77);
+    padding-right: 1em;
+    padding-left: 0.2em;
+}
+.centerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    width: 40%;
+    padding-left: 1em;
+}
+.mainVid, .secVid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.2em;
+    overflow: hidden;
+}
+.secondaryContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid red;
+}
+.secondaryContainer div {
+    width: 20%;
+    margin-right: 0.5em;
+    height: 120px;
+    overflow: hidden;
+}
+.secondaryContainer img {
+    width: 100%;
+    transition: transform 2s;
+    &:hover {
+        transform: scale(1.5);
+    }
+}
+.captionContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.captionContainer div {
+    width: 20%;
+    margin-right: 0.5em;
+    overflow: hidden;
+    color: white;
+}

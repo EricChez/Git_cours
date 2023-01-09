@@ -1,0 +1,27 @@
+h1 {
+   color: white;
+   background-color: cadetblue;
+   padding-left: 20px;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px 50px 20px 50px;
+    text-align: justify;
+}
+
+.code {
+    font-size: 1.5em;
+    color: rgb(5, 62, 64);
+}
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
+.pink {
+    color: rgb(193, 9, 171);
+}
+.darkred {
+    color: darkred;
+}

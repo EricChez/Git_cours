@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+<body>
+    <p style="font-family: Verdana, sans-serif; text-align: center; font-size: 1.5em; color: cadetblue;">Le spread operator (ou syntaxe de d&eacute;composition en fran&ccedil;ais) existe aussi en PHP.</p>
+    <p style="font-family: Verdana, sans-serif; color: red; margin-left: 20px">The spread operator used with arrays</P>
+    <p style="margin-left: 20px"><code>
+        var x = [1, 2, 3]<br>
+        var y = [4, 5, 6]<br>
+
+        // copy an array<br>
+
+        var xx = [...x]<br>
+        console.log(xx)<br><br>
+
+        <span style="color: green";>// concatenation of arrays</span><br><br>
+
+        var array_one = ['dog', 'cat', 'otter']<br>
+        var array_two = ['lion', 'googleplex', 123]<br>
+
+        var array_three = [...array_one, ...array_two]<br>
+        console.log(array_three)<br><br>
+
+        <span style="color: green";>// add an element</span><br><br>
+
+        var array_four = ['requin', ... array_one]<br>
+        console.log(array_four)<br><br>
+
+        <span style="color: green";>// spread a string in an array</span><br><br>
+        var string = "geek"<br>
+        console.log(array_string)<br>
+    </code></p>
+
+    <script>
+        var x = [1, 2, 3]
+        var y = [4, 5, 6]
+
+        // copy an array
+
+        var xx = [...x]
+        console.log(xx)
+
+        // concatenation of arrays
+
+        var array_one = ['dog', 'cat', 'otter']
+        var array_two = ['lion', 'googleplex', 123]
+
+        var array_three = [...array_one, ...array_two]
+        console.log(array_three)
+
+        // add an element
+
+        var array_four = ['requin', ... array_one]
+        console.log(array_four)
+
+        // spread a string in an array
+        var string = "geek"
+        var array_string = [...string]
+        console.log(array_string)
+
+    </script>
+    <p style="font-family: Verdana, sans-serif; color: red; margin-left: 20px; margin-top: 30px;">The spread operator used with objects</p>
+    <p style="margin-left: 20px"><code>
+        var objectOne = {<br>
+        id: 3,<br>
+        name:'John James'<br>
+        }<br><br>
+
+        var objectTwo = {<br>
+            age: 47,<br>
+            country: 'UK'<br>
+        }<br><br>
+
+        var person = {...objectOne, ...objectTwo}<br>
+        console.log(person)<br><br>
+
+        objectOne.address = "14 Serpent Street"<br>
+        console.log(objectOne)<br>
+
+        objectOne.otherPerson = {...objectOne}<br>
+        console.log(objectOne)<br>
+
+        delete objectOne.otherPerson<br>
+        console.log(objectOne)<br><br>
+
+        <span style="color: green;">// Nullish coalescing operator (operateur de coalescence null)</span><br><br>
+
+        var text = null ?? 'Tata Yoyo'<br>
+        console.log(text)<br><br>
+
+        var img = null<br>
+        var imgUrl = img ?? "https://exemple.com"<br>
+        console.log(imgUrl)<br><br>
+
+        var koko = "noix de coco"<br>
+        var zazou = "noix de cajou"<br>
+        var kokotest = koko ?? zazou<br>
+        console.log(kokotest)<br><br>
+
+        <span style="color: green">// Nullish coalescing assignment (affectation après coalescence des nuls)</span><br><br>
+
+        var objThree = {<br>
+            id: 74,<br>
+            value: 47<br>
+        }<br><br>
+
+        objThree.id ??= 12 <span style="color: green">// returns 74</span><br><br>
+
+        objThree.goal ??= "nothing" <span style="color: green">// creates a new key-value par = goal: "nothing"</span><br><br>
+        console.log(objThree)<br>
+    
+    </code></p>
+    <script>
+        var objectOne = {
+            id: 3,
+            name:'John James'
+        }
+        var objectTwo = {
+            age: 47,
+            country: 'UK'
+        }
+        var person = {...objectOne, ...objectTwo}
+        console.log(person)
+
+        objectOne.address = "14 Serpent Street"
+        console.log(objectOne)
+
+        objectOne.otherPerson = {...objectOne}
+        console.log(objectOne)
+
+        delete objectOne.otherPerson
+        console.log(objectOne)
+
+        // Nullish coalescing operator (operateur de coalescence nul)
+
+        var text = null ?? 'Tata Yoyo'
+        console.log(text)
+
+        var img = null 
+        var imgUrl = img ?? "https://exemple.com"
+        console.log(imgUrl)
+
+        var koko = "noix de coco"
+        var zazou = "noix de cajou"
+        var kokotest = koko ?? zazou
+        console.log(kokotest)
+
+        // Nullish coalescing assignment (affectation après coalescence des nuls)
+
+        var objThree = {
+            id: 74,
+            value: 47
+        }
+        objThree.id ??= 12 // returns 74
+
+        objThree.goal ??= "nothing" // creates an key name goal nothing
+        console.log(objThree)
+
+        
+
+    </script>
+    
+</body>
+</html>

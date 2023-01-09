@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+</head>
+<body>
+    <script>
+        // modifier 'g' => Perform a global match (find all matches rather than stopping after the first match)
+        // modifier 'i' => Perform case-insensitive matching
+
+        var question1 = "jf38exercice$jf38zogzogjf38index.php";
+        let answer1 = question1.replace(/jf38/g, '/');
+        console.log(answer1);
+
+        var question2 = "sfuhdduiyf4798sdfdf84sfs84321h6hj1g5klhmo4i98o4pi8ol";
+        let answer2 = question2.replace(/[0-9]/g, '');
+        console.log(answer2);
+
+        var question3 = " L'avionzz des kkkkheros zzzzzzzzzzzzzzs'est zzzzzécrasé";
+        let answer3 = question3.replace(/[z+]|[k+]/g, '');
+        console.log(answer3);
+
+        var question4 = "0457884949844549849898498";
+        let answer4 = question4.replace(/4[5]/g, ''); // /4\B5/
+        console.log(answer4);
+
+        var question5  = "Ce-/+disque-/+/'est''(+\"-nul";
+        let answer5 = question5.replace(/[^a-zA-Z]+/g, ' ');// /(W*)/
+        let answer55 = question5.replace(/[^a-z]+/gi, ' ');
+        console.log(answer5);
+        console.log(answer55);
+
+        var question6 = "Ce-/+disque-/+/'est''(+\"-nul.";// /(w*)/
+        let answer6 = question6.replace(/[a-z]+/gi, '');
+        console.log(answer6);
+
+        var number = '074563';
+        var result = number.match(/07[0-9]{4}/g); // /(07)([\d]){4}/
+        console.log(result);
+
+        var number = '0329475895';
+        var otherNumber = '+33392373405'
+        var result = number.match(/(0|\+33)[1-5][0-9]{8}/g);
+        var otherResult = otherNumber.match(/(0|\+33)[1-5][0-9]{8}/g)
+        console.log(result);
+        console.log(otherResult);
+
+        </script>
+    
+</body>
+</html>

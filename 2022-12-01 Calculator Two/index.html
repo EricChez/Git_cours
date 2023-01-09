@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="https://pagecdn.io/lib/mathjs/11.0.1/math.js" crossorigin="anonymous"></script>
+    <title>Calculator Two</title>
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="flex-container" id="calculator-frame">
+            <div id="top-frame">
+                <div id="display">
+                    <p id="screen"></p>
+                </div>
+            </div>
+
+            <div id="keypad">
+                <div class="keypadRow">
+                    <div id="firstRowOne" class="key">C</div>
+                    <div id="firstRowTwo" class="key">(</div>
+                    <div id="firstRowThree" class="key">)</div>
+                    <div id="firstRowFour" class="key">/</div>
+                </div>
+                <div class="keypadRow">
+                    <div id="secondRowOne" class="key">7</div>
+                    <div id="secondRowTwo" class="key">8</div>
+                    <div id="secondRowThree" class="key">9</div>
+                    <div id="secondRowFour" class="key">*</div>
+                </div>
+                <div class="keypadRow">
+                    <div id="thirdRowOne" class="key">4</div>
+                    <div id="thirdRowTwo" class="key">5</div>
+                    <div id="thirdRowThree" class="key">6</div>
+                    <div id="thirdRowFour" class="key">-</div>
+                </div>
+                <div class="keypadRow">
+                    <div id="fourthRowOne" class="key">1</div>
+                    <div id="fourthRowTwo" class="key">2</div>
+                    <div id="fourthRowThree" class="key">3</div>
+                    <div id="fourthRowFour" class="key">+</div>
+                </div>
+                <div class="keypadRow">
+                    <div id="fifthRowOne" class="key">0</div>
+                    <div id="fifthRowTwo" class="key">.</div>
+                    <div id="fifthRowThree" class="key">=</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            var currentEntry = ''; // This will be expression we're constructing before calling the '=' operator
+  
+            var displayValue = '';
+
+            $('.key').click(function() {
+                var keyPressed = $(this).html();
+                
+                if (keyPressed === "C") {
+                    currentEntry = '';
+                    displayValue = '0';
+                } else if (keyPressed !== 'C' && keyPressed !== '=') {
+                    currentEntry += keyPressed;
+                    console.log(currentEntry);
+                    displayValue = currentEntry;
+                } else if (keyPressed === "=") {
+                    currentEntry = currentEntry;
+                    currentEntry = math.evaluate(currentEntry);
+                    displayValue = currentEntry;
+                };
+                displayUpdate(displayValue);
+                
+            });
+
+            displayUpdate = function(displayValue) {
+                displayValue = displayValue.toString(); // String to be inserted in the #screen <p>
+                    $('#screen').html(displayValue);
+            }
+
+        });
+
+    </script>
+</body>
+</html>

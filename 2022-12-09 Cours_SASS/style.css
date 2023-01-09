@@ -1,0 +1,131 @@
+body {
+  background-color: #F0E9D2;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  color: #181D31;
+}
+h1:hover {
+  color: #6b5004;
+}
+h1 + p {
+  color: #181D31;
+}
+
+p {
+  text-align: center;
+  font-weight: bold;
+  color: #034b3e;
+}
+
+.margin {
+  color: #6b5004;
+  font-size: 1.5em;
+  text-align: unset;
+  margin-left: 30px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.carre-1 {
+  width: 20px;
+  height: 20px;
+  background-color: #6b5004;
+}
+
+.carre-2 {
+  width: 30px;
+  height: 30px;
+  background-color: #6b5004;
+}
+
+.carre-3 {
+  width: 40px;
+  height: 40px;
+  background-color: #6b5004;
+}
+
+.carre-4 {
+  width: 50px;
+  height: 50px;
+  background-color: #6b5004;
+}
+
+.carre-5 {
+  width: 60px;
+  height: 60px;
+  background-color: #6b5004;
+  background-color: #181D31;
+}
+
+.carre-6 {
+  width: 70px;
+  height: 70px;
+  background-color: #6b5004;
+}
+
+.carre-7 {
+  width: 80px;
+  height: 80px;
+  background-color: #6b5004;
+  transition: opacity 2s;
+}
+.carre-7:hover {
+  opacity: 0;
+}
+
+.carre-8 {
+  width: 90px;
+  height: 90px;
+  background-color: #6b5004;
+}
+
+.carre-9 {
+  width: 100px;
+  height: 100px;
+  background-color: #6b5004;
+}
+
+.ostrich {
+  background-image: url("/image/ostrich.jpg");
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+}
+
+.otter {
+  background-image: url("/image/otter.jpg");
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+}
+
+.ant {
+  background-image: url("/image/ant.jpg");
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.overflow {
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+}
+
+.otterPic {
+  width: 100%;
+  transition: transform 2s;
+}
+.otterPic:hover {
+  transform: scale(2.5);
+}
+
+/*# sourceMappingURL=style.css.map */

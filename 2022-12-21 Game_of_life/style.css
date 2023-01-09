@@ -1,0 +1,60 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+    margin: 20px 50px 20px 50px;
+}
+li {
+    line-height: 1.5;
+}
+body h1, h2 {
+    color: cornflowerblue;
+    text-align: center;
+}
+.center {
+    text-align: center;
+    color: rgb(38, 87, 89);
+}
+canvas {
+    border: 1px solid rgb(38, 87, 89);
+}
+.canvas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: cornsilk;
+    margin-top: 50px;
+}
+.main-wrapper {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    background-color: cadetblue;
+    border: 2px solid rgb(38, 87, 89);
+}
+form  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+button {
+    padding: 10px 20px 10px 20px;
+    font-size: 1.5em;
+    background-color: rgb(21, 172, 177);
+    color: white;
+    box-shadow: 5px 5px 3px rgb(9, 60, 62);
+}
+input[type=text] {
+    text-align: center;
+}

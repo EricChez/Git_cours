@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Le jeu de la vie</h1>
+
+    <div class="flex">
+        <canvas width="1000" height="1000" id="canvas"></canvas>
+        <div class="button-flex-col">
+<!--            <p id="postion"></p>-->
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <button id="randomize">Randomize</button>
+            <label>Densité des cellules aléatoires</label>
+            <input type="range" id="density" max="0.95" min="0.5" step="0.01">
+            <button id="reset">Reset</button>
+            <label>VITESSE</label>
+            <input type="range" id="speed" max="60" min="1">
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

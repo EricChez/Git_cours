@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<div style="text-align: center">
+    <input type="number" placeholder="largeur" id="largeur" value="700">
+    <input type="number" placeholder="longueur" id="longueur">
+</div>    
+
+<br>
+<h2 id="author" style="text-align: center" ></h2>
+
+<div style="text-align: center">
+    <img src="" alt="" id="picture" >
+</div>
+
+<div style="text-align: center;">
+    <button id="btn">Nouveau</button>
+</div>
+
+
+
+<script src='https://code.jquery.com/jquery-3.6.1.js'></script>
+<script>
+
+    $(document).ready(function () {
+
+
+    $("#btn").click(function() {
+        let x = Math.floor(Math.random() * 1000);
+            var request = $.ajax({
+                type: 'GET',          //La méthode cible (POST ou GET)
+                url: `https://picsum.photos/id/${x}/info`, //Script Cible
+                dataType: "json",
+            })
+
+            request.done(function (output) {
+                //var json = $.parseJSON((output));
+                console.log(output);
+                $("#picture").attr("src", output.download_url);
+                $("#picture").attr("width", $('#largeur').val());
+                $("#picture").attr("height", $('#longueur').val());
+                $('#author').html(output.author);
+            });
+    })
+
+
+
+    });
+</script>
+</body>
+</html>
+

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="https://pagecdn.io/lib/mathjs/11.0.1/math.js" crossorigin="anonymous"></script>
+    <title>Calculator Three</title>
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="flex-container" id="calculator-frame">
+            <div id="top-frame">
+                <div id="display">
+                    <p id="screen"></p>
+                </div>
+            </div>
+
+            <div id="keypad">
+                <div class="keypadRow">
+                    <div id="firstRowOne" class="key">C</div>
+                    <div id="firstRowTwo" class="key">CE</div>
+                    <div id="firstRowThree" class="key">( )</div>
+                    <div id="firstRowFour" class="key">/</div>
+                </div>
+                <div class="keypadRow">
+                    <div id="secondRowOne" class="key">7</div>
+                    <div id="secondRowTwo" class="key">8</div>
+                    <div id="secondRowThree" class="key">9</div>
+                    <div id="secondRowFour" class="key">*</div>
+                </div>
+                <div class="keypadRow">
+                    <div id="thirdRowOne" class="key">4</div>
+                    <div id="thirdRowTwo" class="key">5</div>
+                    <div id="thirdRowThree" class="key">6</div>
+                    <div id="thirdRowFour" class="key">-</div>
+                </div>
+                <div class="keypadRow">
+                    <div id="fourthRowOne" class="key">1</div>
+                    <div id="fourthRowTwo" class="key">2</div>
+                    <div id="fourthRowThree" class="key">3</div>
+                    <div id="fourthRowFour" class="key">+</div>
+                </div>
+                <div class="keypadRow">
+                    <div id="fifthRowOne" class="key">0</div>
+                    <div id="fifthRowTwo" class="key">.</div>
+                    <div id="fifthRowThree" class="key">=</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            var result = '';
+            var currentEntry = ''; // This will be the expression we're constructing before calling the '=' operator
+            var bracketSwitch = false;
+            var displayValue = '';
+            const pattern = /[\+|\-|\*|\/][\+|\-|\*|\=|\/]/;
+
+            $('.key').click(function() {
+                var keyPressed = $(this).html();
+                
+                if (keyPressed === "C") {
+                    currentEntry = '';
+                    displayValue = '0';
+                } else if (keyPressed === 'CE') {
+                    currentEntry = currentEntry.substring(0, currentEntry.length-1);
+                    displayValue = currentEntry;
+                } else if (keyPressed === "( )") { 
+                    insertBracket(); // this one works for two sets of brackets, one nested into another, with added features
+                    
+                    // This one only works for one set of brackets !!!
+                    /*
+                    if (!bracketSwitch) { // if the bracket switch is off
+                        currentEntry += '(';
+                        displayValue = currentEntry;
+                    } else { // if the bracket switch is on
+                        currentEntry += ')';
+                        displayValue = currentEntry;
+                    }
+                    bracketSwitch = !bracketSwitch;
+                    */
+                } else if (keyPressed !== 'C' && keyPressed !== '=' && isOperator(keyPressed)) {
+                    currentEntry += keyPressed;
+                    if (pattern.test(currentEntry)) {
+                        displayValue = "Error";
+                    } else {
+                        displayValue = currentEntry;
+                        result='';
+                    }
+                } else if (keyPressed !== 'C' && keyPressed !== '=' && !isOperator(keyPressed)) {
+                    if (result !== '') {
+                        currentEntry = keyPressed;
+                        displayValue = currentEntry;
+                        result = '';
+                    } else {
+                        currentEntry += keyPressed;
+                        displayValue = currentEntry;
+                    }
+                } else if (keyPressed === "=") {
+                    currentEntry = currentEntry;
+                    if (pattern.test(currentEntry)) {
+                        displayValue = "Error";
+                    } else {
+                        currentEntry = math.evaluate(currentEntry);
+                        displayValue = currentEntry;
+                        result = currentEntry;
+                    }
+                };
+
+                displayUpdate(displayValue);
+                
+            });
+
+            isOperator = function(operator) { // creates a function to deal with all four operators at once
+                if (operator === '+' || operator === '-' || operator === "*" || operator === "/" ) return true; // This is an If statement (can also do it with one else)
+            };
+
+            displayUpdate = function(displayValue) {
+                //displayValue = displayValue.toString(); // String to be inserted in the #screen <p> // does not seem necessary
+                    $('#screen').html(displayValue);
+            }
+
+            insertBracket = function() {
+                if (currentEntry.length >= 1) { // If there is already something before the first bracket
+                    var index = currentEntry.charAt(currentEntry.length - 1) // = string character just before the bracket
+                    if (!isNaN(parseInt(index)) && bracketSwitch) { // if index is a number and bracket switch is on
+                        currentEntry += ')'; // we insert a closing bracket after a number
+                        displayValue = currentEntry;
+                        bracketSwitch = !bracketSwitch // the bracket switch is now off (opening bracket)
+                    } else if ((!isNaN(parseInt(index)) && !bracketSwitch )|| index === "." ) { // if we have a number and the bracket switch is off (opening bracket) of if we have a dot before a bracket
+                        // we add a multiplication operator before the opening bracket
+                        currentEntry += '*(';
+                        displayValue = currentEntry;
+                        bracketSwitch = !bracketSwitch; // the  bracket switch is now on 
+                        console.log(bracketSwitch);
+                    } else if (isOperator(index)) { // if index is an operator
+                        currentEntry += '('; // we insert an opening bracket
+                        displayValue = currentEntry;
+                        if (!bracketSwitch) { // if bracket switch is off
+                            bracketSwitch = !bracketSwitch // bracket switch is now on
+                        }
+                    } else if (index = '(' && bracketSwitch) { // if the switch is on just after an opening bracket
+                        currentEntry = currentEntry.substring(0, currentEntry.length-1);
+                        displayValue = currentEntry;
+                    } else if (index = ')' && !bracketSwitch) { // if the switch is off just after a closing bracket
+                       currentEntry += ')';
+                       displayValue = currentEntry;
+                       bracketSwitch = !bracketSwitch;
+                       console.log(bracketSwitch);
+                    }
+                } else { // if the bracket is the first member of expression
+                    currentEntry += '(';
+                    displayValue = currentEntry;
+                    bracketSwitch = !bracketSwitch // the bracket switch is now on
+                }
+            }
+
+        });
+
+    </script>
+</body>
+</html>

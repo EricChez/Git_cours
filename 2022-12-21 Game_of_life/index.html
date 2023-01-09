@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Game of Life</title>
+</head>
+<body>
+    <header>
+        <h1>Historique</h1>
+        <p>
+            Le jeu de la vie fut inventé par John Horton Conway en 1970, alors qu'il était professeur de mathématiques à l'université de Cambridge au Royaume-Uni. J.H. Conway s'interessait à un problème proposé par le mathématicien John Leech dans le domaine de la théorie des groupes et qui avait trait à l'empilement dense de sphères à 24 dimensions, comme le réseau de Leech.
+        </p>
+        <p>
+            Il découvrit quelques propriétés remarquables et publia les résultats de son étude en 1968. Conway était également intéressé par un problème présenté vers les années 1940 par le mathématicien renommé John Von Neumann. Ce dernier essayait de trouver une hypothétique machine qui pourrait s'auto-reproduire. Il y parvint en construisant un modèle mathématique aux règles complexes sur un repère cartésien.
+        </p>
+        <p>
+            Conway esseya de simplifier les idées de Von Neumann et finit par réussir. Il créa le jeu de la vie.
+        </p>
+
+        <h2>Les règles</h2>
+        <p>
+            Le jeu de la vie se passe sur une grille en deux dimensions, de taille <i>n</i> x <i>n</i>, <i>n</i> étant le nombre de cases dont est composé la grille horizontalement et verticalement. Cette grille sera composée de cellules vivantes et/ou mortes. Une cellule morte sera blanche, une cellule vivante sera noire. Les règles originales du jeu de la vie sont :
+            <ul>
+                <li>Si une cellule est morte et qu'elle a exactement trois cellules vivantes sur 8 autour d'elle, elle nait.</li>
+                <li>Si une cellule est vivante et qu'elle a 2 ou 3 cellules vivantes autour d'elle, elle reste en vie, sinon elle meurt.</li>
+                <li>Quand une cellule vivante a moins de 2 cellules vivantes autour d'elle, on dit qu'elle meurt d'isolement.</li>
+                <li>Quand une cellule vivante a plus de 3 cellules vivantes autour d'elle, on dit qu'elle meurt de surpopulation.</li>
+            </ul>
+        </p>
+    </header>
+    <main-wrapper>
+        <h1 class="center">Jeu de la vie</h1>
+        <div class="canvas">
+            <div class="canvasArea">
+                <canvas id="canvas" width="1000" height="1000">
+
+                </canvas>
+            </div>
+            
+            <div class="form">
+                <form>
+                    <div>
+                        <label for="density">Density</label>
+                        <input type="range" min="0" max="1" step="0.01" name= "density" class="slider" id="densitySlider">
+                    </div>
+                    <div>
+                        <label for="density">Speed</label>
+                        <input type="range" min="50" max="1000" value="50" name= "speed" class="slider" id="speedSlider">
+                    </div>
+                    <div>
+                        <button type="button" id="random" name="random">Randomize</button>
+                    </div>
+                    <div>
+                        <button type="button" id="start" name="start">Start</button>
+                    </div>
+                    <div>
+                        <button type="button" id="stop" name="stop">Stop</button>
+                    </div>
+                    
+                    <div>
+                        <button type="button" id="reset" name="reset">Reset</button>
+                    </div>
+                    <div>
+                        <label for="x-coord">x coordinates of mouse cursor</label>
+                        <input type="text" name="x-coord" id="x-coord">
+                    </div>
+                    <div>
+                        <label for="x-coord">y coordinates of mouse cursor</label>
+                        <input type="text" name="y-coord" id="y-coord">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main-wrapper>
+    <script src="main.js"></script>
+</body>
+</html>

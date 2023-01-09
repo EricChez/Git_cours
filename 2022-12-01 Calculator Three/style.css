@@ -1,0 +1,84 @@
+@font-face {
+    font-family: "zenDots";
+    src: url("fonts/ZenDots-Regular.ttf");
+    }
+body {
+    font-family: "zenDots";
+    font-size: large;
+}
+.main-wrapper {
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+}
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; /* to align on the main axis, here vertically */
+    align-items: center; /* to align on the secondary axis, here horizontally */
+}
+#calculator-frame {
+    background-color: rgb(51, 49, 49);
+    width: 21em;
+    height: 34em;
+    padding: 0.9em;
+    text-align: center;
+    border-radius: 0.3em;
+    box-shadow: 0.3em 0.3em 0.2em 0.2em black;
+}
+#top-frame {
+    width: 21em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 0.2em;
+
+}
+#keypad {
+    width: 22em;
+}
+#display {
+    border-radius: 0.3em;
+    width: 21em;
+    height: 6em;
+    background-color: rgb(190, 243, 130);
+    box-shadow: 0.2em 0.2em 0.1em rgb(52, 93, 4);
+    margin-bottom: 0.5em;
+}
+.key {
+    background-color: rgb(113, 138, 147);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    width: 5em;
+    height: 5em;
+    border-radius: 0.2em;
+    box-shadow: 0.2em 0.2em 0.1em black;
+}
+.keypadRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.2em;
+
+}
+#fifthRowThree {
+    background-color:rgb(164, 154, 11);
+    width: 10.4em;
+}
+#firstRowOne, #firstRowTwo {
+    background-color: orangered;
+}
+#display {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: middle;
+    padding-right: 2em;
+}
+#screen {
+    padding-top: 1.5em;
+}

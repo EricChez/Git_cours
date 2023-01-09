@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="https://pagecdn.io/lib/mathjs/11.0.1/math.js" crossorigin="anonymous"  ></script>
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="flex-container" id="calculator-frame">
+            <div id="top-frame">
+                <div id="display">
+                    <p id="screen"></p>
+                </div>
+            </div>
+
+            <div id="keypad">
+                <div class="keypadRow">
+                    <div id="firstRowOne" class="key">C</div>
+                    <div id="firstRowTwo" class="key">(</div>
+                    <div id="firstRowThree" class="key">)</div>
+                    <div id="firstRowFour" class="key">/</div>
+                </div>
+                <div class="keypadRow">
+                    <div id="secondRowOne" class="key">7</div>
+                    <div id="secondRowTwo" class="key">8</div>
+                    <div id="secondRowThree" class="key">9</div>
+                    <div id="secondRowFour" class="key">*</div>
+                </div>
+                <div class="keypadRow">
+                    <div id="thirdRowOne" class="key">4</div>
+                    <div id="thirdRowTwo" class="key">5</div>
+                    <div id="thirdRowThree" class="key">6</div>
+                    <div id="thirdRowFour" class="key">-</div>
+                </div>
+                <div class="keypadRow">
+                    <div id="fourthRowOne" class="key">1</div>
+                    <div id="fourthRowTwo" class="key">2</div>
+                    <div id="fourthRowThree" class="key">3</div>
+                    <div id="fourthRowFour" class="key">+</div>
+                </div>
+                <div class="keypadRow">
+                    <div id="fifthRowOne" class="key">0</div>
+                    <div id="fifthRowTwo" class="key">.</div>
+                    <div id="fifthRowThree" class="key">=</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            var result = 0; // This will be the result of the calculation
+            var leftOperand = 0; // This will be the left operand after an operator has been called
+            var currentEntry = '0'; // This will be the current operand we're working with, i.e the expression we're constructing before calling an operator
+            var operator = null;
+            var prevEntry = ''; // To keep the whole expression displayed on the screen after calling an operator
+            var displayValue = '';
+
+            $('.key').click(function() {
+                var keyPressed = $(this).html();
+                
+                if (keyPressed === "C") {
+                    result = 0;
+                    currentEntry = '';
+                    prevEntry = '';
+                    displayValue = '0';
+                } else if (keyPressed === "(") {
+                    prevEntry = currentEntry;
+                    currentEntry = ''; // indicates that we keep what has been entered before and add the bracket after
+                    console.log(currentEntry);
+                    displayValue = prevEntry + "(" + currentEntry;
+                } else if (keyPressed === ")") {
+                    currentEntry += ")"; // same as currentEntry = currentEntry + ")"
+                    displayValue = prevEntry + currentEntry;
+                } else if (keyPressed === ".") {
+                    currentEntry += ".";
+                    displayValue = prevEntry + currentEntry;
+                } else if (isNumber(keyPressed)) { // if the key pressed is a number => funtion defined below, not native to jQuery
+                    // this way we can deal with all keyed numbers at once
+                    if (currentEntry === '0') {
+                        currentEntry = keyPressed // if the previous entry was 0 when we press a number key, the 0 disappears
+                        displayValue = prevEntry + currentEntry;
+                    } else {
+                        currentEntry += keyPressed;
+                        displayValue = prevEntry + currentEntry;
+                    }
+                } else if (isOperator(keyPressed)) { // if the key pressed is an operator => function defined below, not native to jQuery
+                    leftOperand = parseFloat(currentEntry); // we convert what has been entered so far into a number, to make it the left operand
+                    operator = keyPressed; // we give a value to the operator parameter for our function calculate() below
+                    currentEntry = ''; // we reinitialise the current operand, which will be the right operand after the equal operator is called
+                    prevEntry = leftOperand + operator; // keeps the whole expression typed so far in the display
+                    displayValue = prevEntry;
+                }
+                else if (keyPressed === "=") {
+                    currentEntry = currentEntry;
+                    currentEntry = calculate (prevEntry, currentEntry, operator);
+                    displayValue = currentEntry;
+                    //operator = null; // we reinitialize the operator
+                    
+                };
+
+                displayUpdate(displayValue);
+            });
+            /*
+            The isNumeric() method is native to jQuery, it returns a bool if the value is numeric, hence isNumeric('8') returns false as '8' is a string;
+            The isNaN() methods returns true if a value is not a number. The isNaN() method also converts a value to a number before testing it, so isNaN('20') returns false, but !isNaN('20') returns true. This works if the string is a number in a string.
+            */
+            isNumber = function(value) {
+                return !isNaN(value);
+            }
+
+            isOperator = function(operator) { // we create a function to deal with all four operators at once
+                if (operator === '+' || operator === '-' || operator === "*" || operator === "/" ) return true; // This is an If statement (can also do it with one else)
+
+            };
+            /* OTHER SYNTAX
+                isOperator = function(value) {
+                    return value === '/' || value === '*' || value === '+' || value === '-';
+                };
+            */
+            
+            hasParentheses =  function() {
+                
+            }
+            calculate = function(a, b, operator) {
+                a = parseFloat(a); // we make sure both operands are numbers, the first one should be already, but the second isn't yet in the code above
+                b = parseFloat(b);
+                console.log(a, b, operator);
+                if (operator === '+') return a + b; // This is an If statement (can also do it with one else)
+                if (operator === '-') return a - b;
+                if (operator === "*") return a * b;
+                if (operator === "/" && b == 0) {
+                    return "Erreur : division par 0 !";
+                } else if (operator === '/' && b != 0) {
+                    return a / b;
+                }
+            }
+
+            displayUpdate = function(displayValue) {
+                displayValue = displayValue.toString(); // String to be inserted in the #screen <p>
+                    $('#screen').html(displayValue);
+            }
+            console.log(!isNaN('123')); // returns true
+        });
+
+    </script>
+</body>
+</html>
