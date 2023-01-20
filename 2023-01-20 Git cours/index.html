@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="darkplum">Cours Git</h1>
+    <h3 class="plum">Préambule</h3>
+    <p>On ouvre le terminal dans le dossier du cours.</p>
+    <p class="darkteal"><em>On copie le pathname du repository Git en SSH, puis on le colle dans le terminal du cours :</em></p>
+    <p class="teal"><code>stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau/Main/2023-01-20 Git cours$ git clone git@github.com:EricChez/Git_cours.git</code></p>
+
+    <p class="darkteal"><em>Pour générer un clé SSH sur windows, dans le terminal :</em></p>
+    <p class="teal"><code>ssh-keygen -t rsa</code></p>
+    <p class="darkteal"><em>Mais il y a autre chose a faire dans Github pour obtenir la clé qu'on copie avant de la coller dans le terminal.</em></p>
+    <p class="darkteal"><em>Ouvrir un terminal gitbash dans le bureau.</em></p>
+
+    <p>Le dossier .git est caché. Pour le voir, dans le terminal du dossier :</p>
+    <p class="teal"><code>
+        stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau/Main/2023-01-20 Git cours/Git_cours$ ls -a
+.  ..  .git<br>
+stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau/Main/2023-01-20 Git cours/Git_cours$ 
+    </code></p>
+    <h1>My first commit</h1>
+    <p>On va rester en local pour l'instant. Dans le terminal de VS Code :</p>
+    <p class="teal"><code>git add .</code></p>
+    <p>Pour savoir ce qui se passe :</p>
+    <p class="teal"><code>git status</code></p>
+    <p class="teal"><code>git commit -m "first commit"</code></p>
+    <p><code></code></p>
+</body>
+</html>
