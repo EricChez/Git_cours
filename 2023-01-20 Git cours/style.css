@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "gruppo-regular";
+    src: url("font/Gruppo-Regular.ttf");
+}
+body {
+    font-family: "gruppo-regular";
+    font-size: 1.5em;
+    margin-left: 100px;
+}
+.darkteal {
+    color: rgb(2, 59, 59);
+}
+.teal {
+    color: teal;
+}
+.plum {
+    color: rgb(205, 5, 115)
+}
+.darkplum {
+    color: rgb(129, 3, 72)
+}
