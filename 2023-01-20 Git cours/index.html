@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Git (hub) : cours</title>
 </head>
 <body>
     <h1 class="darkplum">Cours Git</h1>
@@ -25,12 +25,72 @@
 .  ..  .git<br>
 stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau/Main/2023-01-20 Git cours/Git_cours$ 
     </code></p>
-    <h1>My first commit</h1>
+
+    <h2 class="darkplum">My first commit</h2>
     <p>On va rester en local pour l'instant. Dans le terminal de VS Code :</p>
     <p class="teal"><code>git add .</code></p>
     <p>Pour savoir ce qui se passe :</p>
     <p class="teal"><code>git status</code></p>
+    <p>Commit :</p>
     <p class="teal"><code>git commit -m "first commit"</code></p>
-    <p><code></code></p>
+    <p>Il n'aimait pas le dossier font, qui semblait tout bloquer. Pour résoudre le problème (en partie, puisque le dossier font n'est pas envoyé) :</p>
+    <p class="teal"><code>
+        stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau/Main/2023-01-20 Git cours$ git add style.css<br>
+    stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau/Main/2023-01-20 Git cours$ git commit -m "first commit"<br>
+    <span class="green">[main 5f46dc1] first commit<br>
+    1 file changed, 21 insertions(+)<br>
+    create mode 100644 2023-01-20 Git cours/style.css</span><br>
+    stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau/Main/2023-01-20 Git cours$ git add .<br>
+    <span class="green">error: '2023-01-20 Git cours/font/' n'a pas de commit extrait<br>
+    fatal: échec de l'ajout de fichiers</span><br>
+    stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau/Main/2023-01-20 Git cours$ git add index.html<br>
+    stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau/Main/2023-01-20 Git cours$ git commit -m "second commit"<br>
+    <span class="green">[main 5ba3d5c] second commit<br>
+    1 file changed, 36 insertions(+)<br>
+    create mode 100644 2023-01-20 Git cours/index.html</span><br>
+    stagiaire15@stagiaire15-HP-ProBook-650-G4:~/Bureau/Main/2023-01-20 Git cours$   
+    </code></p>
+
+    <table>
+        <tbody>
+            <tr class="plum">
+                <td>Local</td>
+                <td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td>
+                <td>Indexage</td>
+                <td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td>
+                <td>Commit</td>
+            </tr>
+            <tr>
+                <td>index.html</td>
+                <td>---------></td>
+                <td><code class ="teal">git add .</code></td>
+                <td>---------></td>
+                <td><code class ="teal">git commit -m "first commit"</code></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>Le commit nous permet de faire notre versionning. Un commit a un SHA-1 (= id)</p>
+    <table>
+        <tbody>
+            <tr>
+                <td>&#9671; B</td>
+                <td>second commit</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>&#9671; A</td>
+                <td>first commit</td>
+                <td><ul>
+                    <li>ID = SHA-1</li>
+                    <li>modification = "Ajouter fichier"</li>
+                    <li>"first commit</li>
+                    <li>Name & email</li>
+                </ul></td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>My second commit</h3>
+    
 </body>
 </html>
