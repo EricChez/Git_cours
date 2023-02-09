@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog index{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+
+                <nav class="navbar navbar-light bg-light justify-content-between">
+                    <a class="navbar-brand">Liste des Articles</a>
+                    <form class="form-inline">
+                        <div class="input-group">
+                            <input class="form-control" type="search" placeholder="Rechercher dans les titres" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Rechercher dans les titres</button>
+                        </div>
+                    </form>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+
+
+    
+    {# <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>CreateAt</th>
+                <th>ModifyAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody> #}
+    
+    <div class="container">
+        <div class="row">
+        {% for blog in blogs %}
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title h5"><a class="link-dark text-decoration-none" href="{{ path('app_blog_show', {'id': blog.id}) }}">{{ blog.title }}</a></h5>
+                        {# <p class="card-text">{{ blog.content|slice(0, 200) }}</p> <!-- filters are included with a '|' --> #}
+                        <a href="#" class="btn btn-primary">Lire l'article</a>
+                        <a href="{{ path('app_blog_edit', {'id': blog.id}) }}" class="btn btn-primary">Editer l'article</a>
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    <div>
+    {% endblock %}
+            {# <tr>
+                <td>{{ blog.id }}</td>
+                <td>{{ blog.title }}</td>
+                <td>{{ blog.content }}</td>
+                <td>{{ blog.createAt ? blog.createAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ blog.ModifyAt ? blog.ModifyAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_blog_show', {'id': blog.id}) }}">show</a>
+                    <a href="{{ path('app_blog_edit', {'id': blog.id}) }}">edit</a>
+                </td>
+            </tr>
+
+        {% else %} <if there is nothing in the table -->
+
+
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr
+
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_blog_new') }}">Create new</a>
+{% endblock %} #}

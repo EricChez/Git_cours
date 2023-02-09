@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block body %}
+    <h1 class="text-center my-5">{{ blog.title }}</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="text-center">{{ blog.content }}</p>
+                <p class="ml-4">Billet de blog écrit par <span><i>{{ blog.user.email }}</i> le <i>{{ blog.createAt|date('d-m-Y H:i') }}</i></span></p>
+                {% if blog.modifyAt != null %}
+                <p class="ml-4">Dernière modification le <span><i>{{ blog.modifyAt|date('d-m-Y H:i') }}</i></span></p>
+                {% endif %}
+
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-5">
+                            <h2>Commentaires</h2>
+                                <div id="comment-list">
+                                {% for comment in comments %}
+                                    <div class="my-3">
+                                        <p class="my-0 fw-bold">{{comment.user.email}}<span class="fw-normal"> {{ comment.createAt|date('d-m-Y H:i')  }}</span></p>
+                                        <div>{{ comment.content|raw }}</div>
+                                    </div>
+                                {% endfor %}
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center my-4">
+                    <h3> Un petit commentaire ?</h3>
+                    <textarea id="commentTextarea" cols="100" rows="10"></textarea>
+                </div>
+
+                <div class="text-center my-4">
+                    <button id="test" class="btn btn-primary">Text AJAX</button>
+                </div>
+
+
+                <div class="text-center">
+                    <a  href="{{ path('app_blog_index') }}">Retour à l'index</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{#    <a href="{{ path('app_blog_edit', {'id': blog.id}) }}">edit</a>#}
+
+{#    {{ include('blog/_delete_form.html.twig') }}#}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script>
+        // NOTRE AJAX
+        const test = document.getElementById('test');
+        const commentList = document.getElementById('comment-list');
+
+
+        test.addEventListener('click', function (){
+
+            let textContent = tinymce.get('commentTextarea').getContent();
+
+            fetch("{{ path('app_comment_new') }}", {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    id: {{ blog.id }},
+                    content : textContent,
+        })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+
+                    // Ajout d'un commentaire en temps réel
+                    createComment(data);
+
+                    // On réinitialise le contenu du textearea apres la réception de la reponse de l'ajax.
+
+                    tinymce.get('commentTextarea').setContent(''); // Avec selecteurs si vous en avez plusieurs
+                    // sur la même page.
+                    //tinymce.activeEditor.setContent(''); // si il y en a seulement 1
+                });
+        })
+
+
+        function createComment(data){
+            let user = data.user;
+            let content = data.content
+
+            // conversion en date français
+            let date = data.date.date
+            const dateObj = new Date(date);
+            let day = dateObj.getDate() < 10 ? "0" + dateObj.getDate() : dateObj.getDate();
+            let month = dateObj.getMonth() < 10 ? "0" + parseInt(dateObj.getMonth() + 1) : parseInt(dateObj.getMonth() + 1);
+            let hours = dateObj.getHours() < 10 ? "0" + dateObj.getHours() : dateObj.getHours();
+            let minutes = dateObj.getMinutes() < 10 ? "0" + dateObj.getMinutes() : dateObj.getMinutes();
+            let convertedDate = ' ' + day + '-' + month + '-'+ dateObj.getFullYear() + ' ' + hours + ":" + minutes;
+            let div = document.createElement("div")
+            div.innerHTML = `<div class='my-3 '><p class='my-0 fw-bold'>${user}<span class="fw-normal">${convertedDate}</span></p> <div>${content}</div> </div>`;
+            commentList.append(div);
+        }
+
+    </script>
+{% endblock %}
+
+
